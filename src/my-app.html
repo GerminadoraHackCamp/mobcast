@@ -19,6 +19,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/polymerfire/polymerfire.html">
 <link rel="import" href="my-icons.html">
 
 <dom-module id="my-app">
@@ -83,6 +85,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <!-- Main content -->
       <app-header-layout has-scrolling-region>
+
+        <firebase-app auth-domain="mobcast-371fe.firebaseapp.com"
+          database-url="https://mobcast-371fe.firebaseio.com"
+          api-key="AIzaSyBeEyhMtxVS5oYiY7SscM9_j_1dL9ruRFw">
+        </firebase-app>
+        <!--<firebase-auth id="auth" user="{{user}}" provider="google" on-error="handleError">
+        </firebase-auth>-->
 
         <app-header condenses reveals effects="waterfall">
           <app-toolbar>
