@@ -1,0 +1,40 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="page-logout" fullbleed>
+  
+  <!-- CSS -->
+  <style is="custom-style" include="iron-flex iron-flex-alignment"></style>
+  <style is="custom-style" include="css-general"></style>
+
+
+
+  <template>
+    
+    <paper-card elevation="1" animated-shadow="false">
+      <div class="card-content" ta-center>
+        <h2>:(</h2>
+        <p>Ficamos triste com sua partida.</p>
+        <a href="/"><paper-button>Go back</paper-button></a>
+      </div>
+    </paper-card>
+
+  </template>
+
+
+
+  <script>
+
+    Polymer({
+
+    	is: 'page-logout',
+
+  		ready: function()
+  		{
+        document.querySelector('app-default').$.appToolbar.style.display = 'none';
+  		},
+
+    });
+
+  </script>
+
+</dom-module>

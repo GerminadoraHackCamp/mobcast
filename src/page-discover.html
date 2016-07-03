@@ -1,0 +1,88 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/_w4/app-quote.html">
+
+<dom-module id="page-discover">
+
+  <!-- CSS -->
+  <style is="custom-style" include="iron-flex iron-flex-reverse iron-flex-alignment iron-flex-factors iron-positioning"></style>
+  <style is="custom-style" include="css-general"></style>
+
+
+
+  <template>
+
+
+    <!-- app-quote -->
+    <div mb-15>
+      <app-quote></app-quote>
+    </div>
+    
+
+    <!-- Persistence -->
+    <firebase-query id="query" app-name="mobcast" path="users" data="{{usersReturn}}"></firebase-query>
+    <firebase-query id="query" app-name="mobcast" path="quotes" data="{{quotesReturn}}"></firebase-query>
+
+
+    <!-- List -->
+    <paper-card>
+      <div class="card-content">
+        <h3>#polymer</h3>
+        <iron-selector id="discover" class="layout horizontal">
+            <template is="dom-repeat" items="[[usersReturn]]">
+              <paper-item>
+                <figure></figure>
+                <p>{{item.name}} : {{item.coordinates.lat}}, {{item.coordinates.lng}}</p>
+              </paper-item>
+            </template>
+        </iron-selector>
+      </div>
+    </paper-card>
+    <paper-card>
+      <div class="card-content">
+        <h3>#cannolis</h3>
+        <iron-selector id="discover" class="layout horizontal">
+            <template is="dom-repeat" items="[[quotesReturn]]">
+              <paper-item>
+                <figure></figure>
+                <p>{{item.name}} : {{item.coordinates.lat}}, {{item.coordinates.lng}}</p>
+              </paper-item>
+            </template>
+        </iron-selector>
+      </div>
+    </paper-card>
+
+
+    <!-- Dialog -->
+    <paper-dialog id="Dialog" modalX>
+      <h2>Maria</h2>
+      <div>Lorem ipsum dolor sit  <strong>#polymer</strong>, consectetur adipisicing elit.</div>
+      <div class="buttons">
+        <paper-button dialog-confirm><iron-icon icon="icons:thumb-up"></iron-icon> &nbsp; UP</paper-button>
+        <paper-button dialog-dismiss><iron-icon icon="icons:thumb-down"></iron-icon> &nbsp; DOWN</paper-button>
+      </div>
+    </paper-dialog>
+
+  </template>
+
+
+
+  <script>
+
+    Polymer({
+
+      is: 'page-discover',
+
+
+      show: function(event)
+      {
+        // this.queryReturn = data;
+
+        console.log(this);
+        console.log(event);
+      }
+
+    });
+
+  </script>
+
+</dom-module>

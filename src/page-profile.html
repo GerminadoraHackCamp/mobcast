@@ -1,0 +1,53 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/geo-location/geo-location.html">
+
+<dom-module id="page-profile">
+
+  <template>
+  
+     <!-- Persistence -->
+    <firebase-document id="fbDocument" app-name="mobcast" path="users/[[user_id]]/name" data="{{user_name}}"></firebase-document>
+    <firebase-document id="fbDocument" app-name="mobcast" path="users/[[user_id]]/coordinates/lat" data="{{lat}}"></firebase-document>
+    <firebase-document id="fbDocument" app-name="mobcast" path="users/[[user_id]]/coordinates/lng" data="{{lng}}"></firebase-document>
+
+    <!-- Save  -->
+    <geo-location latitude="{{lat}}" longitude="{{lng}}"></geo-location>
+  
+    <!-- Search  -->
+    <paper-card heading="Coordinates" class="flex">
+      <div class="card-content">
+        <h3>Info</h3>
+        <paper-input id="user_id" label="userid" value="{{user_id}}"></paper-input>
+        <paper-input label="Name" value="{{user_name}}"></paper-input>
+
+        <h3>Coordinates</h3>
+        <paper-input label="Latitude" value="{{lat}}"></paper-input>
+        <paper-input label="Longitude" value="{{lng}}"></paper-input>
+      </div>
+    </paper-card>
+
+  </template>
+
+
+
+  <script>
+
+    Polymer({
+
+      is: 'page-profile',
+
+      properties: {
+        coordinates: Object
+      },
+
+      ready: function()
+      {
+        this.user_id = 0;
+        // this.coordinates;
+      },
+
+    });
+
+  </script>
+
+</dom-module>
