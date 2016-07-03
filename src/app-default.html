@@ -19,7 +19,7 @@
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 <link rel="import" href="../bower_components/polymerfire/polymerfire.html">
-<link rel="import" href="../bower_components/_w4/css-general.html">
+<link rel="import" href="../src/css-general.html">
 
 
 
@@ -61,7 +61,7 @@
 						<div prefix op-5 style="margin-right:5px;">#</div>
 						<label>interesse</label>
 						<input is="iron-input">
-						<div suffix op-5><iron-icon icon="search"></iron-icon></div>
+						<!-- <div suffix op-3><iron-icon icon="search"></iron-icon></div> -->
 					</paper-input-container>
 				</app-toolbar>
 
@@ -80,7 +80,7 @@
 
 
 				<!-- Header -->
-				<app-header condenses fixed effects="waterfall">
+				<app-header effects="waterfall" condensed-title="Discover the world." condenses fixed>
 					<app-toolbar id="appToolbar">
 						<paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
 						<div title>Discover</div>

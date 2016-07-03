@@ -1,0 +1,31 @@
+<dom-module id="app-quote">
+	
+	<style>
+		paper-card 						{ margin-bottom:15px; }
+		paper-input-container 			{ padding-top:0; }
+		[prefix] iron-icon 				{ opacity:0.1; margin-right:5px; width:60px; height:60px; }
+		[suffix] paper-icon-button 		{ color:#16A085; }
+	</style>
+
+
+
+	<template>
+		<paper-card animated-shadow="true">
+			<div class="card-content">
+				<paper-input-container>
+					<div prefix><iron-icon icon="icons:account-circle"></iron-icon></div>
+					<input is="iron-input" type="text" placeholder="Share...">
+					<div suffix><paper-icon-button icon="send"></paper-icon-button></div>
+				</paper-input-container>
+			</div>
+		</paper-card>
+	</template>
+
+
+
+	<script>
+		Polymer({
+			is: 'app-quote'
+		});
+	</script>
+</dom-module>

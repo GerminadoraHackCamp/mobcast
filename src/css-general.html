@@ -1,0 +1,65 @@
+<dom-module id="css-general">
+	<template>
+		<style>
+			body 				{ position:relative; font-family:'Open Sans'; }
+			div 				{ font-family:'Open Sans'; }
+			app-header-layout 	{ background-color:#E5E5E5; }
+			main 				{ padding:5%; }
+			a 					{ text-decoration:none; }
+			h1, h2, h3, h4 		{ margin:0; padding:0; }
+
+			[op-3] 				{ opacity:0.3; }
+			[op-5] 				{ opacity:0.5; }
+			[op-9] 				{ opacity:0.9; }
+			[op-10] 			{ opacity:0.10; }
+			[mr-5] 				{ margin-right:5px; }
+			[mr-10] 			{ margin-right:10px; }
+			[prefix] 			{ margin-right:5px }
+			[no-click] 			{ pointer-events:none; }
+			[ta-center] 		{ text-align:center; }
+			[c-green] 			{ color:#030; }
+
+
+
+			/* app-header
+			---------------------------------------------------------------------------------------*/
+			app-header { color:#FFF; background:#16A085; }
+
+
+			/* iron-pages
+			---------------------------------------------------------------------------------------*/
+			:host {
+				--iron-pages: 	{  }
+			}
+
+
+
+			/* paper-card
+			---------------------------------------------------------------------------------------*/
+			:host {
+				--paper-card: 					{ display:block; }
+				--paper-card-content: 			{  }
+				--paper-card-background-color: #FFF;
+				
+				--paper-item: 					{ border-bottom:1px solid #EEE; }
+			}
+
+			
+			#menu 										{ margin-top:40px; }
+			#discover 									{ padding-bottom:15px; white-space:nowrap; overflow:auto; }
+			#discover paper-item 						{ margin:15px 10px 0 0; padding:0; border:0; }
+			#discover paper-item figure 				{ margin:0; padding:0; width:80px; height:80px; background:#CCC;  border-radius:50%; border:0; }
+			#discover paper-item p 						{ display:none; position:absolute; }
+			a paper-item 								{ color:#16A085; }
+			
+			paper-card paper-item:last-of-type 			{ border-bottom:0; }
+			iron-selector a:last-of-type paper-item 	{ border-bottom:0; }
+		</style>
+	</template>
+
+
+
+	<script>
+		Polymer({ is:'css-general' });
+	</script>
+</dom-module>
